@@ -2,98 +2,114 @@
 
 # Ruoxiang Zhao
 
-### Robotics Engineer | Embodied AI Builder | Multi-Agent Systems
+### *I build systems where software has to meet the physical world.*
 
-I build end-to-end systems that connect perception, reasoning, and motion.
-My work spans ROS 2 robotics, computer vision, autonomous systems, and multi-agent AI workflows designed for real operators and real environments.
+Robots, multi-agent AI, custom hardware — things that have to actually work when you turn them on.
 
-[![Open to Roles](https://img.shields.io/badge/Open%20To-Robotics%20%7C%20AI%20Systems%20%7C%20Autonomy-0A66C2?style=for-the-badge)](https://github.com/Zhaor3)
-[![Focus](https://img.shields.io/badge/Focus-Embodied%20AI-1B5E20?style=for-the-badge)](https://github.com/Zhaor3)
-[![Build Style](https://img.shields.io/badge/Build%20Style-Prototype%20to%20Deployment-6A1B9A?style=for-the-badge)](https://github.com/Zhaor3)
+[![Building](https://img.shields.io/badge/Building-Embodied%20AI-1B5E20?style=for-the-badge)](https://github.com/Zhaor3?tab=repositories)
+[![Stack](https://img.shields.io/badge/Stack-Robotics%20%C3%97%20LLMs%20%C3%97%20Hardware-0A66C2?style=for-the-badge)](https://github.com/Zhaor3?tab=repositories)
+[![Approach](https://img.shields.io/badge/Approach-Prototype%20%E2%86%92%20Deploy-6A1B9A?style=for-the-badge)](https://github.com/Zhaor3?tab=repositories)
 
 </div>
 
 ---
 
-## Profile
+## About
 
-I enjoy building systems where software has to meet the physical world cleanly: robots that move safely, perception stacks that handle noisy inputs, and AI workflows that turn messy information into actionable decisions.
+I gravitate toward problems where you can't fake the answer. The robot either moves or it doesn't. The trade either makes money or it doesn't. The LCD either talks to the SPI bus or you go figure out which GPIO pin you crossed.
 
-My strongest work tends to sit at the boundary between:
-
-- robotics and hardware-software integration
-- computer vision and environment-aware autonomy
-- agentic AI systems and orchestration
-- rapid prototyping with CAD, 3D printing, and embedded platforms
+Most of what's here started as a question I couldn't stop thinking about and ended as something I could turn on and use.
 
 ---
 
-## Selected Work
+## Featured projects
 
-| Project | Recruiter Snapshot | Stack |
-| --- | --- | --- |
-| [Leaf-vac](https://github.com/Zhaor3/Leaf-vac) | Autonomous outdoor robotics project combining mobility, vision, manipulation, and custom hardware for yard cleanup and environment interaction. | C/C++, Python, CAD, computer vision, robot hardware |
-| [DayTradeAgents](https://github.com/Zhaor3/DayTradeAgents) | Multi-agent AI trading framework with 11 specialized agents, debate-driven decision making, Telegram delivery, chart generation, and a tested indicator pipeline. | Python, LLM APIs, Telegram bots, market data pipelines |
-| RCOS Robotic Arm | ROS 2 and Raspberry Pi control stack with Cartesian targeting, inverse kinematics, Bluetooth jogging, saved presets, and servo safety routing. | ROS 2, Python, URDF, Raspberry Pi, servo control |
+### [DayTradeAgents](https://github.com/Zhaor3/DayTradeAgents) — Multi-agent LLM trading framework
 
----
+> An 11-agent system where bull and bear analysts argue with each other before a portfolio manager makes the call.
 
-## What I Bring
+A six-phase pipeline that mirrors how an actual trading desk operates: data ingestion → analyst team → adversarial debate → trade proposal → risk stress-test → final decision. 15+ technical indicators are computed locally before any LLM gets involved, anchoring the agents in objective signals instead of letting them cherry-pick confirmation.
 
-| Area | Evidence |
-| --- | --- |
-| Robotics systems thinking | Built and integrated robotic arm control flows around ROS 2, joint safety, kinematics, and operator control. |
-| Embodied AI mindset | Focused on projects where perception and planning need to drive real-world actuation, not just simulations or dashboards. |
-| Agent architecture | Designed multi-agent workflows that separate analysis, debate, risk review, and final decision synthesis. |
-| Full-stack prototyping | Comfortable moving across software, hardware, CAD, embedded systems, and deployment workflows. |
+- **62% exact accuracy** on an 8-stock historical backtest — NVDA +20.6%, META +18.3%, TSLA −14.4%
+- Telegram delivery with annotated charts: candlesticks, Bollinger bands, ATR forecast cone
+- Position-aware — tell it your shares and average cost, and it factors P&L into the call
+- Two-tier model routing keeps cost predictable: deep models for analysis and debate, fast models for formatting and news
+
+`Python` · `Anthropic / OpenAI APIs` · `yfinance` · `Telegram Bot API` · `36-test suite`
 
 ---
 
-## Highlights From Public Repos
+### [tokenjar](https://github.com/Zhaor3/tokenjar) — Real-time API spend on a desk gadget
 
-### DayTradeAgents
+> A small wired thing that sits on my desk and tells me exactly how much I'm spending on Claude and OpenAI right now.
 
-- 11-agent architecture with structured debate and risk review
-- 15+ locally computed technical indicators
-- Telegram bot delivery for operational use
-- test suite and backtesting included in the repo
+ESP32-S3 SuperMini driving a 2" ST7789 LCD over SPI, rotary encoder for input, LVGL-based UI. Six rotating screens show Claude / OpenAI / combined spend across windows from 1h to 30d, plus 24-hour sparklines. First boot drops a captive portal so you configure WiFi and API keys from your phone.
 
-### Leaf-vac
+- Pulls from the Anthropic and OpenAI Admin APIs, refreshes every 60s
+- WiFi captive portal setup, mDNS as `tokenjar.local`, OTA firmware updates
+- Adaptive screen dimming, NVS-persisted credentials, cached fallback when the network drops
+- Squashed a nasty `TFT_eSPI` null-pointer bug specific to ESP32-S3 — needed `-DUSE_FSPI_PORT` and a clean rebuild to surface the fix
 
-- autonomous outdoor robotics concept for navigation and object interaction
-- vision-driven interaction with the environment
-- custom mechanical design and robotic arm integration
-- research and prototyping across hardware, calibration, and autonomy
-
-### Current Robotics Direction
-
-- ROS 2 bring-up on Raspberry Pi
-- inverse kinematics for Cartesian control
-- Bluetooth gamepad teleoperation with saved presets
-- practical safety considerations for servo-driven hardware
+`C++` · `PlatformIO` · `LVGL` · `TFT_eSPI` · `ESP32-S3`
 
 ---
 
-## Core Stack
+### [TA.skill](https://github.com/Zhaor3/TA-skill) — Relationship-aware persona reconstruction
 
-`Python` `ROS 2` `Raspberry Pi` `Arduino` `C/C++` `OpenAI API` `Computer Vision` `SLAM` `Telegram Bots` `CAD` `3D Printing`
+> Reconstructs a person as a persistent AI persona — not generically, but as they exist *in relation to you specifically*.
 
----
+Four modular engines model different layers: **Identity** (temperament, values, contradictions), **Relationship** (attachment, conflict patterns, how they actually treat *you*), **Memory** (shared timeline, rituals, unresolved threads), **Presence** (message length, punctuation, response timing). Every inference carries a HIGH / MEDIUM / LOW confidence and a source citation — the persona hedges instead of fabricating.
 
-## Opportunities I Care About
+- Ingests chat exports from WhatsApp, Telegram, Discord, iMessage, plus screenshots and photo cues
+- Human Mode for full language modeling, Pet Mode with narrated / interpreted / playful / hybrid voices
+- Correction workflow with version snapshots — "she'd never start a sentence like that" updates the persona and is rollback-safe
+- Designed around safety: transparent / immersive / hybrid disclosure modes, crisis detection, all data stays local
 
-I am especially interested in roles involving:
-
-- robotics software
-- autonomy and perception
-- embodied AI
-- AI systems engineering
-- applied R&D and fast prototyping
-
-If you are hiring for systems that combine software, hardware, and real-world decision making, this is the kind of work I want to keep building.
+`Python` · `AgentSkills standard` · `MIT`
 
 ---
 
-## Find Me Here
+### [Leaf-vac](https://github.com/Zhaor3/Leaf-vac) — AI-enabled outdoor robotics
 
-- GitHub: [github.com/Zhaor3](https://github.com/Zhaor3)
+> An outdoor robot for yard work — navigation, vision, manipulation, natural-language commands. Collaborative project I've put substantial work into.
+
+VSLAM for moving through unstructured outdoor space, image recognition for obstacles and objects, a 3D-printed claw for grabbing things. Responds to commands like *"find my [item]"* or *"drive 10 feet north."* C/CUDA stack with OpenCV (via gocv) and Darknet for inference, dual-motor drive, Bluetooth-enabled Arduino.
+
+- Stereo camera depth sensing with calibration
+- Differentiates permanent vs. temporary obstacles
+- Inference optimized for resource-constrained on-device compute
+
+`C` · `CUDA` · `OpenCV` · `Darknet` · `Arduino` · `3D-printed mechanics`
+
+---
+
+## What I'm into
+
+- **Embodied AI** — perception → reasoning → motion, on real hardware, end to end
+- **Multi-agent orchestration** — debate-based decisions, role separation, adversarial review
+- **Custom hardware** — ESP32, sensors, LCDs, the small mechanical pieces that hold it all together
+- **Robotics control** — ROS 2, inverse kinematics, teleoperation, servo safety routing
+- **Practical ML deployment** — making models actually run on the device that has to use them
+
+---
+
+## Stack
+
+`Python` · `C / C++` · `ROS 2` · `OpenCV` · `CUDA` · `LVGL` · `PlatformIO` · `Arduino` · `ESP32` · `Raspberry Pi` · `Anthropic API` · `OpenAI API` · `Telegram Bot API` · `Darknet` · `CAD` · `3D printing`
+
+---
+
+<div align="center">
+
+![Zhaor3's GitHub stats](https://github-readme-stats.vercel.app/api?username=Zhaor3&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true)
+![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Zhaor3&layout=compact&theme=tokyonight&hide_border=true&langs_count=8)
+
+</div>
+
+---
+
+<div align="center">
+
+*Curious what I'm tinkering with next? Watch the [repo list](https://github.com/Zhaor3?tab=repositories).*
+
+</div>

@@ -71,9 +71,7 @@ Image-geolocation pipeline using EXIF, visual reasoning, hypothesis generation, 
 
 ## Engineering Snapshot
 
-```text
-mechanical design -> sensors -> firmware -> data pipeline -> AI reasoning -> user workflow
-```
+**Mechanical design -> sensors -> firmware -> data pipeline -> AI reasoning -> user workflow**
 
 I am comfortable moving across that whole path: designing parts in CAD, wiring sensors, writing embedded UI code, building Python services, and shaping the final user experience so the system is actually usable.
 

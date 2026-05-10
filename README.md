@@ -1,102 +1,93 @@
 <div align="center">
 
-<a href="https://github.com/Zhaor3">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=70A5FD&center=true&vCenter=true&repeat=true&width=650&height=50&lines=Building+autonomous+systems;Multi-agent+AI+%C3%97+Robotics+%C3%97+Hardware;From+silicon+to+swarm+intelligence" alt="Typing SVG" />
-</a>
+<img src="./assets/profile-hero.png" alt="Robotics, embedded hardware, and AI systems banner" width="100%" />
 
-<br/>
+# Ruoxiang Zhao
 
-I build systems where software has to meet the physical world.<br/>
-Robots, multi-agent AI, custom hardware — things that have to actually work when you turn them on.
+**Mechanical engineer building robotics, embedded systems, and practical AI tools.**
 
-<br/><br/>
+Incoming M.S. Robotics student at the University of Michigan. RPI Mechanical Engineering '26. I like projects where software has to meet the physical world: autonomous vehicles, sensor systems, firmware, and AI workflows with real safety boundaries.
 
-<img src="https://skillicons.dev/icons?i=python,cpp,c,pytorch,arduino,raspberrypi,linux,docker,git,github&perline=10" alt="Tech Stack" />
-
-<br/>
-
-![ROS 2](https://img.shields.io/badge/ROS_2-22314E?style=flat-square&logo=ros&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
-![CUDA](https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
-![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white)
-![PlatformIO](https://img.shields.io/badge/PlatformIO-FF7F00?style=flat-square&logo=platformio&logoColor=white)
-![LVGL](https://img.shields.io/badge/LVGL-2C2D3A?style=flat-square&logoColor=white)
+<a href="https://zhaor3.github.io/portfolio/"><img alt="Portfolio" src="https://img.shields.io/badge/portfolio-open-111827?style=for-the-badge"></a>
+<a href="https://github.com/Zhaor3/signalforge-ai"><img alt="Flagship repo" src="https://img.shields.io/badge/flagship-signalforge--ai-2563EB?style=for-the-badge"></a>
+<a href="https://github.com/Zhaor3/tokenjar"><img alt="Hardware repo" src="https://img.shields.io/badge/hardware-tokenjar-059669?style=for-the-badge"></a>
 
 </div>
 
----
+## What I Build
 
-I gravitate toward problems where you can't fake the answer — the robot either moves or it doesn't, the trade either makes money or it doesn't, the LCD either talks to the SPI bus or you go figure out which GPIO pin you crossed.
+- **Robotics and autonomous systems** - ROS 2, vehicle dynamics, controls, sensors, CAD, rapid prototyping.
+- **Embedded hardware products** - ESP32-S3, C++, PlatformIO, LVGL, SPI displays, rotary UI, WiFi provisioning, OTA.
+- **AI + backend systems** - Python, FastAPI, SQLAlchemy, Redis, testable service layers, model routing, agent workflows.
+- **Safety-aware tools** - deterministic checks around AI output, explicit failure modes, risk gates, and human confirmation.
 
----
+Right now I am especially interested in embodied AI, autonomous vehicles, and AI systems that stay useful when the data is messy and the hardware is real.
 
-## Projects
+## Best Recent Repo: SignalForge AI
 
-### [DayTradeAgents](https://github.com/Zhaor3/DayTradeAgents) — Multi-agent LLM trading framework
+<a href="https://github.com/Zhaor3/signalforge-ai">
+  <img src="./assets/signalforge-system.png" alt="SignalForge AI system visual" width="100%" />
+</a>
 
-11 agents argue — bull vs. bear analysts, adversarial debate, risk stress-test — before a portfolio manager makes the call. Six-phase pipeline mirrors a real trading desk. 15+ technical indicators computed locally before any LLM touches the data.
+**[signalforge-ai](https://github.com/Zhaor3/signalforge-ai)** is the repo I would send a recruiter to first.
 
-- **62% exact accuracy** on 8-stock backtest — NVDA +20.6%, META +18.3%
-- Telegram delivery with candlestick charts, Bollinger bands, ATR forecast cone
-- Position-aware P&L — tell it your shares and cost basis, it factors that in
-- Two-tier model routing: deep models for analysis, fast models for formatting
+It is a safety-aware quant + AI Telegram research assistant that scans markets, tracks portfolios, calculates deterministic risk, paper trades, backtests strategies, and explains trade setups without executing real orders.
 
-`Python` · `Anthropic / OpenAI APIs` · `yfinance` · `Telegram Bot API`
+Why it is the strongest showcase:
 
----
+- **Real architecture:** FastAPI/Telegram entry points, service layer, provider abstractions, quant modules, risk modules, AI modules, SQLAlchemy persistence, Redis cache support.
+- **Clear safety boundary:** Python calculates indicators, PnL, sizing, and risk; AI explains summaries but cannot override deterministic risk decisions.
+- **Test coverage:** repo includes tests for trading plans, parsers, Telegram handlers, indicators, backtesting, risk sizing, portfolio services, scanners, and AI routing.
+- **Product thinking:** natural-language Telegram flows like daily checks, risk checks, watchlists, paper trades, and beginner-friendly explanations.
+- **Good README discipline:** architecture diagrams, setup instructions, testing commands, safety model, limitations, and roadmap are already documented.
 
-### [tokenjar](https://github.com/Zhaor3/tokenjar) — Real-time API spend on a desk gadget
+Tech: `Python` `FastAPI` `SQLAlchemy` `Redis` `APScheduler` `pandas` `yfinance` `OpenAI` `Telegram Bot API` `pytest`
 
-ESP32-S3 + 2" ST7789 LCD showing Claude & OpenAI spend across 1h–30d windows with 24-hour sparklines. Rotary encoder input, LVGL UI, captive portal WiFi setup from your phone.
+## Other Work Worth Opening
 
-- Pulls Anthropic and OpenAI Admin APIs every 60s
-- mDNS as `tokenjar.local`, OTA firmware updates
-- Adaptive dimming, NVS-persisted credentials, cached fallback on network drop
+| Project | Why it matters | Stack |
+| --- | --- | --- |
+| **[tokenjar](https://github.com/Zhaor3/tokenjar)** | A real ESP32-S3 desk gadget that tracks Anthropic/OpenAI API usage with a 2-inch LCD, encoder UI, captive portal setup, cached data, OTA updates, and a printable case. | `C++` `PlatformIO` `LVGL` `TFT_eSPI` `ESP32-S3` |
+| **[DayTradeAgents](https://github.com/Zhaor3/DayTradeAgents)** | Earlier multi-agent trading framework: 11 LLM agents, 6-phase debate pipeline, technical indicators, Telegram delivery, chart generation, and position-aware analysis. | `Python` `OpenAI/Anthropic` `yfinance` `Telegram` |
+| **[portfolio](https://github.com/Zhaor3/portfolio)** | Personal portfolio with robotics, vehicle controls, mechanical design, autonomous systems, and maker projects in one polished site. | `TypeScript` `Next.js` `Tailwind` |
+| **[GeoAgent](https://github.com/Zhaor3/GeoAgent)** | Image-geolocation pipeline using EXIF, visual reasoning, hypothesis generation, external verification, and final scoring. | `Python` `Vision AI` `Telegram` |
 
-`C++` · `PlatformIO` · `LVGL` · `TFT_eSPI` · `ESP32-S3`
+## Engineering Snapshot
 
----
+```text
+mechanical design -> sensors -> firmware -> data pipeline -> AI reasoning -> user workflow
+```
 
-### [TA.skill](https://github.com/Zhaor3/TA-skill) — Relationship-aware persona reconstruction
+I am comfortable moving across that whole path: designing parts in CAD, wiring sensors, writing embedded UI code, building Python services, and shaping the final user experience so the system is actually usable.
 
-Four engines — **Identity** (values, contradictions), **Relationship** (attachment, how they treat *you*), **Memory** (shared timeline, rituals), **Presence** (message cadence, punctuation) — model a person as they exist in relation to you. Every inference carries confidence levels and source citations.
+## Tools I Reach For
 
-- Ingests WhatsApp, Telegram, Discord, iMessage exports + screenshots
-- Correction workflow with version snapshots and rollback
-- Crisis detection, disclosure modes, all data stays local
+<p>
+  <img alt="Python" src="https://img.shields.io/badge/Python-2563EB?style=flat-square&logo=python&logoColor=white" />
+  <img alt="C++" src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
+  <img alt="C" src="https://img.shields.io/badge/C-555555?style=flat-square&logo=c&logoColor=white" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img alt="ROS 2" src="https://img.shields.io/badge/ROS_2-22314E?style=flat-square&logo=ros&logoColor=white" />
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-059669?style=flat-square&logo=fastapi&logoColor=white" />
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+  <img alt="Arduino" src="https://img.shields.io/badge/Arduino-00878F?style=flat-square&logo=arduino&logoColor=white" />
+  <img alt="PlatformIO" src="https://img.shields.io/badge/PlatformIO-F5822A?style=flat-square&logo=platformio&logoColor=white" />
+  <img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=111827" />
+</p>
 
-`Python` · `AgentSkills standard`
+## Quick Context
 
----
+- Incoming **M.S. Robotics** student at the University of Michigan.
+- Completing **B.S. Mechanical Engineering** at RPI, GPA 3.87 / 4.0.
+- Undergraduate researcher at **XAL Research Lab**, working on autonomous-vehicle systems for a Can-Am X3 platform.
+- Tesla engineering intern in 2025, focused on CAD redesign, thermal/manufacturing assessment, and autonomous-driving sensor mounting.
+- Seeking **Summer 2026 robotics, autonomous systems, controls, embedded, or AI engineering internships**.
 
-### [Leaf-vac](https://github.com/Zhaor3/Leaf-vac) — AI-enabled outdoor robotics
-
-VSLAM navigation through unstructured outdoor space, image recognition, 3D-printed claw, natural-language commands like *"find my [item]"* or *"drive 10 feet north."*
-
-- Stereo camera depth sensing with calibration
-- Permanent vs. temporary obstacle differentiation
-- C/CUDA stack with on-device inference optimized for constrained hardware
-
-`C` · `CUDA` · `OpenCV` · `Darknet` · `Arduino`
-
----
-
-## What I'm Into
-
-- **Embodied AI** — perception → reasoning → motion, end to end on real hardware
-- **Multi-agent orchestration** — debate-based decisions, role separation, adversarial review
-- **Custom hardware** — ESP32, sensors, LCDs, the mechanical pieces that hold it all together
-- **Practical ML deployment** — making models run on the device that has to use them
-
----
+## GitHub Signal
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Zhaor3&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" height="180"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Zhaor3&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Languages" height="180"/>
-
-<br/>
-
-<img src="https://streak-stats.demolab.com/?user=Zhaor3&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
+<img src="https://github-readme-stats.vercel.app/api?username=Zhaor3&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true" alt="GitHub stats" height="165" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Zhaor3&layout=compact&theme=github_dark&hide_border=true&langs_count=8" alt="Top languages" height="165" />
 
 </div>

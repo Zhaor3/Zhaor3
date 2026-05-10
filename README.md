@@ -45,12 +45,29 @@ Tech: `Python` `FastAPI` `SQLAlchemy` `Redis` `APScheduler` `pandas` `yfinance` 
 
 ## Other Work Worth Opening
 
-| Project | Why it matters | Stack |
-| --- | --- | --- |
-| **[tokenjar](https://github.com/Zhaor3/tokenjar)** | A real ESP32-S3 desk gadget that tracks Anthropic/OpenAI API usage with a 2-inch LCD, encoder UI, captive portal setup, cached data, OTA updates, and a printable case. | `C++` `PlatformIO` `LVGL` `TFT_eSPI` `ESP32-S3` |
-| **[DayTradeAgents](https://github.com/Zhaor3/DayTradeAgents)** | Earlier multi-agent trading framework: 11 LLM agents, 6-phase debate pipeline, technical indicators, Telegram delivery, chart generation, and position-aware analysis. | `Python` `OpenAI/Anthropic` `yfinance` `Telegram` |
-| **[portfolio](https://github.com/Zhaor3/portfolio)** | Personal portfolio with robotics, vehicle controls, mechanical design, autonomous systems, and maker projects in one polished site. | `TypeScript` `Next.js` `Tailwind` |
-| **[GeoAgent](https://github.com/Zhaor3/GeoAgent)** | Image-geolocation pipeline using EXIF, visual reasoning, hypothesis generation, external verification, and final scoring. | `Python` `Vision AI` `Telegram` |
+### [tokenjar](https://github.com/Zhaor3/tokenjar) - ESP32 API Usage Gadget
+
+A real ESP32-S3 desk gadget that tracks Anthropic/OpenAI API usage with a 2-inch LCD, encoder UI, captive portal setup, cached data, OTA updates, and a printable case.
+
+`C++` `PlatformIO` `LVGL` `TFT_eSPI` `ESP32-S3`
+
+### [DayTradeAgents](https://github.com/Zhaor3/DayTradeAgents) - Multi-Agent Trading Research
+
+Earlier multi-agent trading framework: 11 LLM agents, 6-phase debate pipeline, technical indicators, Telegram delivery, chart generation, and position-aware analysis.
+
+`Python` `OpenAI/Anthropic` `yfinance` `Telegram`
+
+### [portfolio](https://github.com/Zhaor3/portfolio) - Robotics Portfolio
+
+Personal portfolio with robotics, vehicle controls, mechanical design, autonomous systems, and maker projects in one polished site.
+
+`TypeScript` `Next.js` `Tailwind`
+
+### [GeoAgent](https://github.com/Zhaor3/GeoAgent) - Image Geolocation Pipeline
+
+Image-geolocation pipeline using EXIF, visual reasoning, hypothesis generation, external verification, and final scoring.
+
+`Python` `Vision AI` `Telegram`
 
 ## Engineering Snapshot
 
